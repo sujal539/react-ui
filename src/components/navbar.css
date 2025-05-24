@@ -1,0 +1,68 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba(197, 146, 52, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* 🔹 Note Button */
+.note-btn {
+  display: flex;
+  align-items: center;
+  background-color:  #cde8f3;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.note-btn:hover {
+  background-color: #8b9ba1;
+  /* Darker green on hover */
+}
+
+.note-btn img {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.n-btn-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.n-button {
+  padding: 12px 24px;
+  background-color:  #d66766;
+  font-weight: 450;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.n-button:hover {
+  background-color:#e63c30;
+  color: black;
+}

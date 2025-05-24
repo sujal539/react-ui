@@ -1,0 +1,111 @@
+.l-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    /* Light, cool gradient */
+    /* Elegant blue gradient */
+}
+
+.l-card {
+    width: 40%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+
+}
+
+
+
+.l-input-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.l-input {
+    padding: 12px;
+    margin: 8px;
+    border: 2px solid #4f6d8f;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #e6e9eb;
+    /* color: white; */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.l-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.l-btn-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.l-btn-container .l-btn {
+    padding: 12px 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    /* Stylish button gradient */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.l-btn-container .l-btn:hover {
+    background: linear-gradient(to right, #4ff554, #95e935);
+    /* Darker hover effect */
+}
+
+.l-btn {
+    text-align: center;
+}
+
+@media (max-width : 900px) {
+
+    .l-card {
+        width: 80%;
+    }
+
+    .l-input-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .l-input {
+        width: 100%;
+    }
+}
+
+@media (max-width : 1100px) {
+
+    .l-card {
+        width: 60%;
+    }
+
+    .l-input-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .l-input {
+        width: 100%;
+    }
+}

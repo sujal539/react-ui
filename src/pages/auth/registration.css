@@ -1,0 +1,122 @@
+        /* Body Styling */
+        .r-body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #cfd9df, #e2ebf0);
+            /* Light, cool gradient */
+            /* Elegant blue gradient */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        /* Card Styling */
+        .r-card {
+            width: 400px;
+            padding: 30px;
+            background-color: whitesmoke;
+            /* color: white; */
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        /* Input Grid Layout */
+        .r-input-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Label Styling
+        .r-label {
+            font-weight: bold;
+            color: #f2f2f2;
+        } */
+
+        /* Input Styling */
+        .r-input {
+            padding: 12px;
+            border: 2px solid #4f6d8f;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: #f0eaea;
+            /* color: white; */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Input Focus Styling */
+        .r-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            /* Green on focus */
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Button Container */
+        .r-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Button Styling */
+        .r-btn-container .r-button {
+            padding: 12px 30px;
+            font-weight: bold;
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            /* Green gradient */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Button Hover Effect */
+        .r-btn-container .r-button:hover {
+            background: linear-gradient(to right, #388E3C, #7CB342);
+            /* Darker green on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Signup Link */
+        .r-signup-text {
+            display: block;
+            text-align: center;
+            color: #89a9c4;
+            font-weight: bold;
+            margin-top: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Signup Link Hover Effect */
+        .r-signup-text:hover {
+            color: #4eabd6;
+            /* Lighter blue on hover */
+        }
+
+        .rel-icon {
+            position: relative;
+        }
+
+        .abs-icon {
+            position: absolute;
+            top: 35%;
+            right: 10px;
+        }
+
+        @media (max-width:900px) {
+            .r-input-grid {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .r-card {
+                padding: 10px;
+            }
+
+        }

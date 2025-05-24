@@ -1,0 +1,8 @@
+.center {
+    text-align: center;
+}
+.container{
+        background: linear-gradient(to right, #cfd9df, #e2ebf0);
+        min-height: 100vh;
+        position: relative;
+}
