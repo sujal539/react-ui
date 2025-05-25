@@ -51,11 +51,6 @@
     outline: none;
 }
 
-/* Optional: borderless class if needed */
-.e-no-border {
-    border: none;
-}
-
 /* Button styling */
 .e-btn-container {
     display: flex;
@@ -65,7 +60,7 @@
 
 .e-button {
     padding: 12px 24px;
-    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    background: linear-gradient(to right, #4447c2, #00076e);
     color: white;
     border: none;
     border-radius: 8px;
@@ -75,5 +70,6 @@
 }
 
 .e-button:hover {
-    background: linear-gradient(to right, #4ff554, #95e935);
+    background: linear-gradient(to right, #7f38ec, #4285f4);
+    box-shadow: 0 8px 15px rgba(106, 17, 203, 0.2);
 }

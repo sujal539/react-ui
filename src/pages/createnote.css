@@ -76,7 +76,7 @@ textarea:focus {
 /* Button styling */
 .c-button {
     padding: 12px 24px;
-    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    background: linear-gradient(to right, #4447c2, #00076e);
     color: white;
     border: none;
     border-radius: 8px;
@@ -86,7 +86,8 @@ textarea:focus {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+
 .c-button:hover {
-    background: linear-gradient(to right, #4ff554, #95e935);
-    transform: translateY(-2px);
+  background: linear-gradient(to right, #7f38ec, #4285f4);
+  box-shadow: 0 8px 15px rgba(106, 17, 203, 0.2);
 }

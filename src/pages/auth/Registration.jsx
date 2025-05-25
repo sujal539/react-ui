@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './registration.css'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from '../../helper'
@@ -22,7 +22,7 @@ const Registration = () => {
             }
         }
         auth()
-    },[navigate])
+    }, [navigate])
 
     const postData = async () => {
         const response = await fetch(`${API_URL}/auth/register`, {
@@ -89,7 +89,10 @@ const Registration = () => {
                     <button className='r-button' type="submit">Register</button>
                 </div>
 
-                <a className="r-signup-text" href="">Already have an account? Login</a>
+                <a className="r-signup-text" href="#" onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/login');
+                }}> Already have an account? Login</a>
             </form>
         </div>
     </div>
