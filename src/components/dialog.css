@@ -1,5 +1,6 @@
+/* Dialog Component Styles This is an error, earlier we were using no modal dialog, we can't apply rules to dialog directly,  */
 /* Dialog Positioning and Centering */
-dialog {
+/* dialog {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -10,27 +11,39 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 1001;  /* Ensure it appears on top of the backdrop */
   border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
+} */
 
-/* Make the dialog visible when it’s open */
-dialog[open] {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05); /* Slight scaling effect on open */
-}
 
-/* Backdrop Style */
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.25);  /* Dark semi-transparent background */
-  backdrop-filter: blur(8px);               /* Adds blur effect to the background */
-  transition: background-color 0.3s ease;   /* Smooth transition for the backdrop */
+  background-color: darkorange;
+  background-image: linear-gradient(130deg, #ff7a18,
+      #af002d 41.07%,
+      #319197 76.05%);
+  opacity: 0.7;
+  backdrop-filter: blur(20px);
+  pointer-events: none;
+}
+
+
+dialog[open] {
+  /* opacity: 1; */
+  display: flex;
+  top: 50%;
+  left: 50%;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  z-index: 1000;
+  border: none;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
 
 /* Title */
@@ -43,7 +56,7 @@ dialog::backdrop {
 }
 
 /* Dialog Content Text */
-.p-d{
+.p-d {
   font-size: 1rem;
   color: #555;
   margin-bottom: 20px;
@@ -54,8 +67,8 @@ dialog::backdrop {
 /* Button Container */
 .dia-btn-container {
   display: flex;
+  gap: 2rem;
   justify-content: space-evenly;
-  width: 100%;
 }
 
 /* Button Styling */

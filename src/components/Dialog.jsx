@@ -1,10 +1,11 @@
+import { forwardRef } from 'react'
 import './dialog.css'
-const Dialog = ({ title, text, onYes, onCancel, dialogRef }) => {
+const Dialog = forwardRef(({ title, text, onYes, onCancel }, ref) => {
 
-    
+
     return (
-      
-        <dialog ref={dialogRef}>
+
+        <dialog ref={ref}>
             <h3 className='h3-d'>{title}</h3>
             <p className='p-d'>{text}</p>
             <div className="dia-btn-container">
@@ -13,5 +14,6 @@ const Dialog = ({ title, text, onYes, onCancel, dialogRef }) => {
             </div>
         </dialog>
     )
-}
+})
+Dialog.displayName = 'Dialog'
 export default Dialog

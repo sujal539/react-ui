@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useRef} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../index.css'
 import './Home.css'
 import Navbar from '../components/Navbar';
@@ -22,14 +22,14 @@ function Home() {
 
   const getNotes = async () => {
 
-    const res = await  getRequest('api/notes')
-    if(res.data){
-       setNotes({
+    const res = await getRequest('api/notes')
+    if (res.data) {
+      setNotes({
         loading: false,
         data: res.data
       })
-    }else {
-       setNotes({
+    } else {
+      setNotes({
         error: true,
         loading: false,
         data: []
@@ -54,19 +54,19 @@ function Home() {
 
   const deleteNote = async () => {
     try {
-     const resp =  await fetch(`http://localhost:3455/api/note/${deleteId}`,{
+      const resp = await fetch(`http://localhost:3455/api/note/${deleteId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
-      if(!resp.ok){
+      if (!resp.ok) {
         throw Error("something went wrong")
       }
 
 
       setNotes((prev) => {
-       const newValue = {...prev} 
-       const temp = newValue.data.filter(note => note.id !== deleteId)
-       return {...newValue, data: temp}
+        const newValue = { ...prev }
+        const temp = newValue.data.filter(note => note.id !== deleteId)
+        return { ...newValue, data: temp }
       })
 
     } catch (error) {
@@ -78,7 +78,9 @@ function Home() {
 
   const handleDelete = (id) => {
     setDeleteId(id)
-    dialogRef.current.showModal()
+    if (dialogRef.current) {
+      dialogRef.current.showModal()
+    }
   }
 
   return (<div className='container'>
@@ -93,8 +95,8 @@ function Home() {
           onDelete={() => handleDelete(it.id)}
         />))}
     </div>
-    <Dialog dialogRef={dialogRef} onCancel={() => {
-       dialogRef.current.close()
+    <Dialog ref={dialogRef} onCancel={() => {
+      dialogRef.current.close()
     }} onYes={() => {
       deleteNote()
       dialogRef.current.close()

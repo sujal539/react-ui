@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Login from './pages/auth/Login'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import Registration, { MyPage } from './pages/auth/Registration'
 import Createnote from './pages/Createnote'
 import Editnote from './pages/Editnote'
@@ -14,13 +14,19 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
 
+        {/* Open routes */}
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Registration />} />
 
-        <Route path='/' element={<Protected><Home/></Protected>} />
-        <Route path='/create' element={<Createnote />} />
-        <Route path='/edit' element={<Editnote />} />
-        <Route path='*' element={<Error />} />
+        {/* Protected routes */}
+        <Route element={<Protected><Outlet /></Protected>}>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<Createnote />} />
+          <Route path="/edit" element={<Editnote />} />
+        </Route>
+
+        {/* Optional: Catch-all route for 404 */}
+        <Route path="*" element={<Error />} />
 
       </Routes>
     </BrowserRouter>
