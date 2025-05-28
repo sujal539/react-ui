@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './registration.css'
 import { useNavigate } from 'react-router-dom'
-import { API_URL } from '../../helper'
+import { API_URL, postRequest } from '../../helper'
 import { getRequest } from '../../helper'
 const Registration = () => {
 
@@ -24,27 +24,11 @@ const Registration = () => {
         auth()
     }, [navigate])
 
-    const postData = async () => {
-        const response = await fetch(`${API_URL}/auth/register`, {
-            method: 'POST',
-            // credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ firstName, lastName, email, password, confirmPass })  // ← this should be "body", not "data"
-        });
-
-        if (response.ok) {
-            navigate('/login')
-            alert("Registration successfull")
-        }
-    }
-
     return <div className='r-body'>
         <div className="r-card">
             <form onSubmit={async (ev) => {
                 ev.preventDefault()
-                await postData()
+                await postRequest('auth/register', { firstName, lastName, email, password, confirmPass }, 'POST')
             }} id="registration-form">
                 <div className="r-input-grid">
                     <label className='r-label' htmlFor="firstName">First Name:</label>
