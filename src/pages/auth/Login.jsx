@@ -1,7 +1,7 @@
 import { Link, useNavigate, } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './login.css'
-import { getRequest, postRequest } from '../../helper'
+import { API_URL, getRequest, postRequest } from '../../helper'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -20,13 +20,28 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const postData = async () => {
+        const response = await fetch(`${API_URL}/auth/login`, {
+            method: 'POST',
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })  // ← this should be "body", not "data"
+        });
+
+        if (response.ok) {
+            navigate("/");
+            alert("Login successfull")
+        }
+    }
 
     return <div className="l-body">
         <div className="l-card">
 
             <form onSubmit={async (ev) => {
                 ev.preventDefault()
-                await postRequest('auth/login', { email, password }, 'POST')
+                await postData()
             }} id="registration-form">
                 <div className="l-input-grid">
                     <label className='l-label' htmlFor="email">Email:</label>
