@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate} from 'react-router-dom';  // <-- added useLocation
+import { useNavigate } from 'react-router-dom';  // <-- added useLocation
 import '../index.css';
 import './Home.css';
 import Navbar from '../components/Navbar';
 import Notecard from '../components/Notecard';
 import Dialog from '../components/Dialog';
-import { getRequest } from '../helper';
+import { API_URL, getRequest } from '../helper';
 
 function Home() {
   const [notes, setNotes] = useState({
@@ -54,7 +54,7 @@ function Home() {
 
   const deleteNote = async () => {
     try {
-      const resp = await fetch(`http://localhost:3455/api/note/${deleteId}`, {
+      const resp = await fetch(`${API_URL}/api/note/${deleteId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
