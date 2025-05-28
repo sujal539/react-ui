@@ -1,0 +1,38 @@
+/* Container for the image slider */
+.im-body{
+ height: 100vh;
+background: #090c10;
+}
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  /* Hide images outside the container */
+  margin-left:200px;
+  padding-top: 100px;
+  max-width: 80%;
+  /* Limit slider width */
+}
+
+.slider {
+  display: flex;
+  border: 2px solid rgb(226, 216, 129);
+  width: fit-content;
+  padding:30px 10px 30px 10px;
+  background: rgb(235, 143, 6); /* Red background */
+  border-radius: 15px;
+   box-shadow:
+  inset 40px 0 40px rgba(0, 0, 0, 0.5),   /* Left side */
+  inset -40px 0 40px rgba(0, 0, 0, 0.5);  /* Right side */
+
+  transition: transform 1s ease-in-out;
+}
+
+
+/* Style for the images */
+.slider img {
+  width: 60px;
+  height: 50px;
+  object-fit: fill;
+  margin-right: 10px;
+  /* Space between images */
+}

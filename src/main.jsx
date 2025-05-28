@@ -9,6 +9,7 @@ import Editnote from './pages/Editnote'
 import Home from './pages/Home'
 import Error from './pages/Error'
 import Protected from './pages/Protected'
+import ImageSlider from './pages/ImageSlider'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route element={<Protected><Outlet /></Protected>}>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Createnote />} />
+          <Route path="/inter" element={<ImageSlider />} />
           <Route path="/edit" element={<Editnote />} />
         </Route>
 
