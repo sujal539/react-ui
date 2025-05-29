@@ -25,7 +25,9 @@ function Home() {
     if (res.data) {
       setNotes({
         loading: false,
-        data: res.data
+        data: res.data.data
+          .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)), // Sort by date descending,
+        error: false
       });
     } else {
       setNotes({

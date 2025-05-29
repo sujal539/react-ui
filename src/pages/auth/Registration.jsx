@@ -67,7 +67,7 @@ const Registration = () => {
                     <label className='r-label' htmlFor="email">Email:</label>
                     <input value={email} onChange={ev => {
                         setEmail(ev.target.value)
-                    }} className='r-input' id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2}$" name="email" type="email" required />
+                    }} className='r-input' id="email" name="email" type="email" required />
                 </div>
 
                 <div className="r-input-grid rel-icon">

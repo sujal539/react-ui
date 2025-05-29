@@ -8,8 +8,12 @@ export const getRequest = async (path) => {
     if (!response.ok) {
       throw new Error("something went wrong")
     }
+    const data = await response.json();
+    if (!data || !data.data) {
+      throw new Error("No data found")
+    }
     return {
-      data: await response.json(),
+      data,
       error: null
     }
   } catch (error) {

@@ -47,7 +47,7 @@ const Login = () => {
                     <label className='l-label' htmlFor="email">Email:</label>
                     <input className='l-input' value={email} onChange={ev => {
                         setEmail(ev.target.value)
-                    }} type="text" id="email" pattern="^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2}$" name="email" required />
+                    }} type="text" id="email" name="email" required />
                 </div>
                 <div className="l-input-grid">
                     <label className='l-label' htmlFor="password">Password:</label>
