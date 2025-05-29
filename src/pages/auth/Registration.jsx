@@ -38,6 +38,13 @@ const Registration = () => {
         if (response.ok) {
             navigate('/login')
             alert("Registration successfull")
+        } else {
+            const errorData = await response.json();
+            if (errorData && errorData.message) {
+                alert(errorData.message);
+            } else {
+                alert("Registration failed. Please try again.");
+            }
         }
     }
 

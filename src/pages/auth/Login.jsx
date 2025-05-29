@@ -33,6 +33,13 @@ const Login = () => {
         if (response.ok) {
             navigate("/");
             alert("Login successfull")
+        } else {
+            const errorData = await response.json();
+            if (errorData && errorData.message) {
+                alert(errorData.message);
+            } else {
+                alert("Login failed. Please try again.");
+            }
         }
     }
 
