@@ -1,7 +1,7 @@
 import { Link, useNavigate, } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import './login.css'
-import { API_URL, getRequest, postRequest } from '../../helper'
+import { API_URL, getRequest } from '../../helper'
 
 const Login = () => {
     const navigate = useNavigate()

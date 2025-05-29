@@ -4,11 +4,10 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  background: rgba(197, 146, 52, 0.05);
-  border-radius: 10px;
+  background: black;
+  /* border-radius: 0 0 10px 10px; */
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin: 10px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -17,8 +16,9 @@
 .note-btn {
   display: flex;
   align-items: center;
-  background-color:  #cde8f3;
+  background-color:  #ffffff;
   font-weight: 600;
+  white-space: preserve nowrap;
   border-radius: 10px;
   padding: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,4 +65,8 @@
 .n-button:hover {
   background-color:#e63c30;
   color: black;
+}
+
+.header , .user {
+  color: white;
 }

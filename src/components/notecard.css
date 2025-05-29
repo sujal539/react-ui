@@ -11,7 +11,7 @@
 
 .container {
   display: grid;
-  grid-template-rows: 0.8fr 4fr;
+  grid-template-rows: 0.5fr 4fr;
 }
 
 .edit-btn {

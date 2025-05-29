@@ -1,27 +1,39 @@
 import './navbar.css'
 import image from '../../public/icons/create.png'
 import { postRequest } from '../helper'
-import {useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { getRequest } from '../helper'
 const Navbar = ({ onCreate, uid }) => {
-const navigate = useNavigate()
+    const navigate = useNavigate()
+
+    const [userName, setUserName] = useState('')
     const handleLogout = async () => {
         try {
-        const response = await postRequest('auth/logout', {}, 'POST')
+            const response = await postRequest('auth/logout', {}, 'POST')
             if (!response.ok) {
-                 throw new Error ('unknown error')
-                
+                throw new Error('unknown error')
+
             }
             navigate('/login', { replace: true })
-           
+
         } catch (error) {
             alert(error.message)
         }
 
     }
+    useEffect(() => {
+        const auth = async () => {
+            const response = await getRequest('auth/me')
+            const { first_name, last_name } = response.data.data
+            setUserName(first_name + " " + last_name)
+
+        }
+        auth()
+    }, [])
     return <nav id="navbar">
-        <p>UserId {uid ?? 'na'}</p>
-        <h1>Notes</h1>
+        <p className='user'>{userName}</p>
+        <h1 className='header'>Notes</h1>
 
         <div className='btn-container'>
             <div onClick={onCreate} className="note-btn">
