@@ -4,7 +4,7 @@ import { postRequest } from '../helper'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getRequest } from '../helper'
-const Navbar = ({ onCreate, uid }) => {
+const Navbar = ({ onCreate }) => {
     const navigate = useNavigate()
 
     const [userName, setUserName] = useState('')
